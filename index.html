@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f8f6f1" />
+  <meta name="description" content="Riku Web Design｜福島県郡山市を拠点に、業種を問わずホームページ・LPを制作。オリジナルデザイン、スマホ対応、HTML/CSS/JavaScript。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Riku Web Design | 想いを、伝わるカタチに。" />
+  <meta property="og:description" content="業種を問わず、想いが伝わるホームページ・LPを。制作実績・料金・お問い合わせはこちら。" />
+  <title>Riku Web Design | ホームページ・LP制作</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600;700&display=swap');
+    :root{--ink:#2b2a26;--muted:#706d65;--cream:#f8f6f1;--paper:#fffcf7;--sand:#e9e3d8;--accent:#ad8c66;--line:#ddd6cb;--white:#fff;--serif:'Noto Serif JP',Georgia,serif;--sans:'DM Sans','Noto Sans JP',sans-serif;scroll-behavior:smooth}
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-padding-top:100px}
+    body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);line-height:1.85;-webkit-font-smoothing:antialiased}
+    body::selection{background:#dfccb3}
+    img{display:block;max-width:100%}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    :focus-visible{outline:2px solid #947047;outline-offset:4px}
+    .shell{width:min(1180px,calc(100% - 72px));margin-inline:auto}
+    .site-header{height:90px;display:flex;align-items:center;border-bottom:1px solid rgba(95,82,67,.14);background:rgba(248,246,241,.91);position:sticky;top:0;z-index:40;backdrop-filter:blur(16px)}
+    .header-inner{display:flex;justify-content:space-between;align-items:center;width:100%}
+    .wordmark{font-family:Georgia,serif;font-style:italic;font-size:34px;letter-spacing:-2px;line-height:1;position:relative}
+    .wordmark span{font-family:var(--sans);font-size:9px;letter-spacing:.18em;font-style:normal;display:block;text-transform:uppercase;margin-top:8px}
+    .main-nav{display:flex;align-items:center;gap:36px}
+    .main-nav a{font-size:11px;letter-spacing:.13em;transition:color .2s}
+    .main-nav a:hover{color:var(--accent)}
+    .main-nav .nav-contact{padding:10px 19px;border:1px solid var(--ink);border-radius:2px}
+    .main-nav .nav-contact:hover{background:var(--ink);color:white}
+    .menu-toggle{display:none;background:none;border:0;width:40px;height:40px;cursor:pointer}
+    .eyebrow{font-size:10px;letter-spacing:.27em;text-transform:uppercase;color:#907f6d;font-weight:700}
+    .hero{padding:90px 0 128px;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;width:460px;height:460px;right:-220px;top:-250px;border-radius:50%;background:#ece5da80;pointer-events:none}
+    .hero-inner{display:grid;grid-template-columns:1fr .96fr;gap:62px;align-items:center}
+    .hero-content{position:relative;z-index:2}
+    .hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(37px,4.35vw,65px);letter-spacing:.09em;line-height:1.67;margin:33px 0 26px;white-space:nowrap}
+    .hero h1 em{font-style:normal;color:#ab8f70;position:relative}
+    .hero h1 em::after{content:'';position:absolute;bottom:-7px;left:0;right:0;height:1px;background:#bc9d78}
+    .hero-lede{font-size:13px;line-height:2.5;letter-spacing:.07em;color:#716c63;margin-bottom:40px}
+    .btn{display:inline-flex;align-items:center;justify-content:space-between;gap:46px;font-size:12px;letter-spacing:.08em;min-height:58px;padding:0 23px;transition:transform .2s,background .2s,color .2s;border:1px solid var(--ink)}
+    .btn:hover{transform:translateY(-3px)}
+    .btn.primary{background:var(--ink);color:white}
+    .btn.primary:hover{background:#514637}
+    .btn.ghost{background:transparent}
+    .btn .arrow{font-size:18px;line-height:1}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-visual{position:relative;padding:24px 0 30px 20px}
+    .hero-visual::before{content:'';position:absolute;right:-35px;top:-24px;background:#eae3d9;width:87%;height:102%;z-index:0}
+    .hero-visual .main-shot{width:100%;aspect-ratio:1.72;object-fit:cover;object-position:center;filter:saturate(.76);position:relative;z-index:1;box-shadow:0 20px 50px rgba(60,54,45,.12)}
+    .hero-visual .image-label{position:absolute;z-index:2;right:0;bottom:8px;background:var(--paper);padding:18px 23px;min-width:215px;box-shadow:0 10px 28px #29231a14}
+    .hero-visual .image-label b{font-family:Georgia,serif;letter-spacing:.09em;font-size:19px;font-weight:400}
+    .hero-visual .image-label small{display:block;color:var(--muted);font-size:9px;letter-spacing:.18em;margin-top:4px}
+    .floating-index{position:absolute;left:0;top:0;z-index:2;writing-mode:vertical-rl;font-size:10px;letter-spacing:.27em;color:#8d8478}
+    .hero-foot{margin-top:74px;display:flex;align-items:center;gap:14px;font-size:10px;letter-spacing:.18em;color:#94877a}
+    .hero-foot::before{content:'';width:43px;height:1px;background:var(--accent)}
+    .section{padding:115px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:56px;gap:24px}
+    .section-kicker{font-size:10px;letter-spacing:.24em;color:var(--accent);font-weight:700}
+    .section-title{font-family:var(--serif);font-size:clamp(32px,3.7vw,48px);line-height:1.5;font-weight:500;margin:8px 0 0;letter-spacing:.1em}
+    .section-description{font-size:12px;color:var(--muted);max-width:300px;line-height:2.2;margin-bottom:2px}
+    #works{background:var(--paper)}
+    .works{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+    .project{min-width:0}
+    .project-media{background:#eae5dc;overflow:hidden;display:block;position:relative;aspect-ratio:1.35}
+    .project-media img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease,filter .3s}
+    .project-media:hover img{transform:scale(1.035)}
+    .project-media:after{content:'↗';position:absolute;right:20px;bottom:20px;border-radius:50%;width:48px;height:48px;background:var(--paper);display:grid;place-items:center;font-size:22px;box-shadow:0 8px 20px #0001}
+    .project-meta{font-size:10px;letter-spacing:.16em;color:#927e69;margin:25px 0 8px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+    .project-meta::before{content:'';height:1px;width:25px;background:#ab8c65}
+    .project h3{font:400 29px/1.3 Georgia,serif;letter-spacing:.05em;margin:0 0 10px}
+    .project p{font-size:12px;color:var(--muted);margin:0;line-height:2.1}
+    .project-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:16px}
+    .project-tags span{font-size:10px;border:1px solid var(--line);color:#7d7367;padding:3px 10px}
+    .note{margin-top:30px;font-size:11px;color:#817970}
+    #services{background:var(--cream)}
+    .service-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .service{padding:34px 33px 38px;border-right:1px solid var(--line)}
+    .service:first-child{padding-left:0}.service:last-child{border-right:0}
+    .service .number{font:italic 28px Georgia,serif;color:#bba587}
+    .service h3{font-family:var(--serif);font-weight:500;font-size:17px;margin:22px 0 10px}
+    .service p{color:var(--muted);font-size:12px;line-height:2.25;margin:0}
+    .pricing{margin-top:65px;background:#eae3d8;display:grid;grid-template-columns:1.12fr .88fr;gap:30px;padding:44px 50px;align-items:center}
+    .pricing .pricing-tag{font-size:10px;letter-spacing:.2em;color:#867258}
+    .pricing h3{font-family:var(--serif);font-weight:500;font-size:23px;margin:14px 0 9px}
+    .pricing p{font-size:11px;color:#756d63;margin:0;line-height:2.1}
+    .pricing .price{font:400 clamp(32px,4vw,50px) Georgia,serif;letter-spacing:.025em;white-space:nowrap;text-align:right}
+    .pricing .price span{font:500 12px var(--sans);margin-left:8px;vertical-align:middle}
+    #about{background:var(--paper)}
+    .about-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:80px;align-items:start}
+    .about-decor{border:1px solid #dcd3c5;min-height:330px;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;background:radial-gradient(ellipse at 28% 24%,#f4ecdf,#e8dece 75%)}
+    .about-decor::after{content:'';position:absolute;inset:18px;border:1px solid #d9cbb8}
+    .about-decor .decor-r{font:italic 135px/.95 Georgia,serif;color:#534537;z-index:1}
+    .about-decor .decor-title{font-size:10px;letter-spacing:.4em;color:#746555;z-index:1;margin-top:14px}
+    .about-body .section-title{margin-bottom:28px}
+    .about-body p{font-size:13px;line-height:2.6;color:#6a655e;margin:0 0 18px}
+    .about-detail{border-top:1px solid var(--line);margin-top:28px;padding-top:22px;display:flex;gap:16px;align-items:center;font-size:11px;color:#817b70}
+    .about-detail strong{color:#504b43;font-weight:600;letter-spacing:.12em}
+    #contact{background:#38352f;color:#f9f7f3;text-align:center;padding:120px 0 98px;position:relative;overflow:hidden}
+    #contact::before{content:'R';position:absolute;left:-70px;top:-180px;font:italic 520px/.9 Georgia,serif;color:rgba(255,255,255,.035);pointer-events:none}
+    #contact .section-kicker{color:#cfbba0}
+    #contact .section-title{font-size:clamp(31px,4vw,55px);line-height:1.7}
+    .contact-lede{font-size:12px;line-height:2.3;color:#d1c9bd;margin:24px 0 34px}
+    .contact-links{display:flex;justify-content:center;flex-wrap:wrap;gap:12px}
+    #contact .btn.primary{color:#33312e;background:#f6efe5;border-color:#f6efe5}
+    #contact .btn.ghost{border-color:#aaa298;color:#f6efe5}
+    .contact-small{color:#b6ac9d;font-size:10px;margin-top:27px}
+    .footer{background:#38352f;color:#c0b7aa;border-top:1px solid #5a544b;padding:26px 0}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px;font-size:10px;letter-spacing:.08em}
+    .footer-links{display:flex;gap:20px}
+    @media(max-width:920px){.hero-inner{gap:28px}.hero h1{font-size:clamp(34px,4.5vw,50px)}.hero{padding-top:75px}.about-grid{gap:38px}.pricing{padding:32px}}
+    @media(max-width:700px){.shell{width:min(100% - 38px,520px)}.site-header{height:72px}.wordmark{font-size:29px}.menu-toggle{display:block;z-index:51}.menu-toggle span{display:block;width:23px;height:1px;background:var(--ink);margin:6px auto;transition:transform .2s}.main-nav{position:absolute;left:0;right:0;top:72px;background:var(--cream);border-bottom:1px solid var(--line);padding:25px 22px;flex-direction:column;align-items:stretch;gap:12px;display:none;box-shadow:0 10px 20px #0000000c}.main-nav.open{display:flex}.main-nav a{padding:10px;font-size:13px}.main-nav .nav-contact{text-align:center}.hero{padding:58px 0 80px}.hero-inner{grid-template-columns:1fr;gap:45px}.hero h1{font-size:clamp(35px,8vw,52px);margin:18px 0}.hero-lede{font-size:12px;margin-bottom:26px}.hero-visual{width:95%;margin:0 auto;padding:15px 0 20px 12px}.hero-visual .main-shot{aspect-ratio:1.72;object-position:center}.hero-foot{margin-top:34px}.section{padding:78px 0}.section-head{display:block;margin-bottom:34px}.section-description{margin-top:14px}.works{grid-template-columns:1fr;gap:45px}.project h3{font-size:27px}.service-grid{grid-template-columns:1fr}.service,.service:first-child{padding:22px 0;border-bottom:1px solid var(--line);border-right:0}.service:last-child{border-bottom:0}.service h3{margin:9px 0}.pricing{display:block;padding:28px 23px}.pricing .price{text-align:left;margin-top:22px;font-size:37px}.about-grid{grid-template-columns:1fr;gap:36px}.about-decor{min-height:240px}.about-decor .decor-r{font-size:104px}#contact{padding:84px 0}.footer-inner{flex-direction:column;align-items:center;text-align:center}.hero-actions{gap:10px}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="shell header-inner">
+    <a class="wordmark" href="#top" aria-label="Riku Web Design、ページ上部へ">Riku<span>WEB DESIGN</span></a>
+    <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span></button>
+    <nav class="main-nav" id="primary-nav" aria-label="メインナビゲーション">
+      <a href="#works">WORKS</a><a href="#services">SERVICES</a><a href="#about">ABOUT</a><a class="nav-contact" href="#contact">CONTACT ↗</a>
+    </nav>
+  </div>
+</header>
+<main id="top">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="shell hero-inner">
+      <div class="hero-content">
+        <div class="eyebrow">FUKUSHIMA / JAPAN &nbsp;—&nbsp; WEB DESIGN</div>
+        <h1 id="hero-title">想いを、<br /><em>伝わる</em>カタチに。</h1>
+        <p class="hero-lede">お店にも、企業にも、個人の活動にも。<br />その魅力がまっすぐ届く、<br />シンプルで心地よいWebサイトを。</p>
+        <div class="hero-actions"><a class="btn primary" href="#works">制作実績を見る <span class="arrow">↗</span></a><a class="btn ghost" href="#contact">制作の相談をする <span class="arrow">↗</span></a></div>
+        <div class="hero-foot">DESIGN &amp; DEVELOPMENT</div>
+      </div>
+      <div class="hero-visual">
+        <span class="floating-index">SELECTED WORK / 001</span>
+        <img class="main-shot" src="assets/aer-cafe.webp" alt="自主制作のカフェサイト AER CAFE のトップページ" width="1904" height="1079" fetchpriority="high" />
+        <div class="image-label"><b>AER CAFE</b><small>WEBSITE DESIGN / CONCEPT</small></div>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="works" aria-labelledby="works-title">
+    <div class="shell">
+      <div class="section-head"><div><div class="section-kicker">01 / SELECTED WORKS</div><h2 class="section-title" id="works-title">制作実績<span aria-hidden="true">。</span></h2></div><p class="section-description">雰囲気も目的も異なる、2つの自主制作Webサイトをご紹介します。</p></div>
+      <div class="works">
+        <article class="project"><a class="project-media" href="https://riku-riku-lab.github.io/aer-cafe/" target="_blank" rel="noopener noreferrer" aria-label="AER CAFEのWebサイトを新しいタブで開く"><img src="assets/aer-cafe.webp" alt="AER CAFEのデスクトップ版ホームページ" width="1904" height="1079" loading="eager" /></a><div class="project-meta">01 &nbsp; / &nbsp; CAFE WEBSITE &nbsp; / &nbsp; 自主制作</div><h3>AER CAFE</h3><p>落ち着いたカフェの世界観を、余白と写真で表現したコンセプトサイト。</p><div class="project-tags"><span>HTML / CSS / JavaScript</span><span>Responsive</span></div></article>
+        <article class="project"><a class="project-media" href="https://boost-gym-lp-chi.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="BOOST GYMのWebサイトを新しいタブで開く"><img src="assets/boost-gym.webp" alt="BOOST GYMのデスクトップ版ホームページ" width="1904" height="1079" loading="eager" /></a><div class="project-meta">02 &nbsp; / &nbsp; GYM LANDING PAGE &nbsp; / &nbsp; 自主制作</div><h3>BOOST GYM</h3><p>力強いビジュアルと明確な導線で、サービスの特徴を伝えるコンセプトLP。</p><div class="project-tags"><span>HTML / CSS / JavaScript</span><span>Responsive</span></div></article>
+      </div>
+      <p class="note">※ 掲載している2件は、実在店舗からの依頼ではなく架空の店舗を想定した自主制作作品です。</p>
+    </div>
+  </section>
+  <section class="section" id="services" aria-labelledby="services-title"><div class="shell">
+    <div class="section-head"><div><div class="section-kicker">02 / WHAT I DO</div><h2 class="section-title" id="services-title">できること<span aria-hidden="true">。</span></h2></div><p class="section-description">業種にとらわれず、目的や雰囲気に合わせて制作します。</p></div>
+    <div class="service-grid">
+      <div class="service"><div class="number">01</div><h3>ホームページ制作</h3><p>お店やサービスの魅力を、わかりやすく伝えるオリジナルサイトを制作します。</p></div>
+      <div class="service"><div class="number">02</div><h3>LP制作</h3><p>商品やサービスの内容を整理し、お問い合わせにつながる導線を意識したページを制作します。</p></div>
+      <div class="service"><div class="number">03</div><h3>スマホ対応・改修</h3><p>スマートフォンでも読みやすい表示への対応や、既存ページの一部修正もご相談ください。</p></div>
+    </div>
+    <div class="pricing"><div><div class="pricing-tag">STARTING PRICE</div><h3>まずは、小さな一歩から。</h3><p>1ページのLP制作・スマホ対応が基本。<br />詳細な内容や納期、修正範囲はご相談のうえお見積もりします。<br />※ 独自ドメイン・サーバー代などは別途となります。</p></div><div class="price">¥30,000〜 <span>税込 / 1ページ</span></div></div>
+  </div></section>
+  <section class="section" id="about" aria-labelledby="about-title"><div class="shell about-grid">
+    <div class="about-decor" aria-hidden="true"><span class="decor-r">R.</span><span class="decor-title">RIKU WEB DESIGN</span></div>
+    <div class="about-body"><div class="section-kicker">03 / ABOUT ME</div><h2 class="section-title" id="about-title">はじめまして、<br />Rikuです。</h2><p>福島県郡山市を拠点に、Webサイト制作に取り組んでいます。</p><p>HTML・CSS・JavaScriptを使い、デザインから実装まで。見た目の美しさだけでなく、訪れた人に内容が伝わることも大切にしています。</p><p>カフェやジムはもちろん、業種を問わずご相談ください。</p><div class="about-detail"><strong>BASED IN</strong><span>福島県 郡山市 / オンラインでのご相談にも対応</span></div></div>
+  </div></section>
+  <section id="contact" aria-labelledby="contact-title"><div class="shell"><div class="section-kicker">04 / GET IN TOUCH</div><h2 class="section-title" id="contact-title">あなたの想いを、<br />聞かせてください。</h2><p class="contact-lede">ホームページやLPの制作について、<br />「こんなものを作りたい」という段階からお気軽にご相談ください。</p><div class="contact-links"><a class="btn primary" href="https://www.instagram.com/riku.design_/" target="_blank" rel="noopener noreferrer">Instagramで相談する <span class="arrow">↗</span></a><a class="btn ghost" href="https://x.com/Riku1zIk" target="_blank" rel="noopener noreferrer">Xで相談する <span class="arrow">↗</span></a></div><div class="contact-small">ご連絡は各SNSのDMからお願いいたします。</div></div></section>
+</main>
+<footer class="footer"><div class="shell footer-inner"><span>© <span id="year">2026</span> RIKU WEB DESIGN.</span><div class="footer-links"><a href="#top">BACK TO TOP ↑</a><a href="https://www.instagram.com/riku.design_/" target="_blank" rel="noopener noreferrer">INSTAGRAM ↗</a><a href="https://x.com/Riku1zIk" target="_blank" rel="noopener noreferrer">X ↗</a></div></div></footer>
+<script>
+  document.getElementById('year').textContent = String(new Date().getFullYear());
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.main-nav');
+  toggle.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+  });
+  document.querySelectorAll('.main-nav a').forEach(link => link.addEventListener('click', () => {
+    nav.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'メニューを開く');
+  }));
+</script>
+</body>
+</html>
